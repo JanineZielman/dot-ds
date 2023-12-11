@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="input-wrapper">
+      <span class="note">What are you teaching?</span>
+      <input type="text" id="subjectInput" onkeyup="searchSubject()"  title="Type in a name">
+    </div>
+
+    <ul id="subject">
+      <li><a href="?subject=type">Type & Typography</a></li>
+      <li><a href="#">Design Research</a></li>
+      <li><a href="#">Interactive Media</a></li>
+      <li><a href="#">Theory & History</a></li>
+      <li><a href="#">Open Lab</a></li>
+      <li><a href="#">Visual Grammar</a></li>
+      <li><a href="#">Spaces & Systems</a></li>
+      <li><a href="#">Materiality & Play</a></li>
+      <li><a href="#">Creativity & Computing</a></li>
+      <li><a href="#">Sprint</a></li>
+      <li><a href="#">Project Month</a></li>
+    </ul>
+    <div class="overlay"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
