@@ -9,8 +9,12 @@
 <body>
   <div class="container">
 
+    <div id="topbar">
+
+    </div>
+
     <!-- subject -->
-    <div id="subject-wrapper">
+    <div id="subject-wrapper" class="wrapper">
       <div class="input-wrapper">
         <span class="note">What are you teaching?</span>
         <input type="text" id="subjectInput" onkeyup="searchSubject()"  title="Type in a name">
@@ -32,7 +36,7 @@
     </div>
 
     <!-- what -->
-    <div id="what-wrapper">
+    <div id="what-wrapper" class="wrapper">
       <div class="input-wrapper">
         <span class="note">What are the students making / learning?</span>
         <input type="text" id="whatInput" onkeyup="getInput()"  title="Type in a name">
@@ -40,33 +44,50 @@
       </div>
     </div>
 
-    <div id="when-how-wrapper">
-      <div class="input-wrapper2">
+
+    <!-- when -->
+    <div id="when-wrapper" class="wrapper">
+      <div class="input-wrapper">
         <span class="note">When should it be finished?</span>
-        <input type="text" id="whenInput" onkeyup="getWhen()"  title="Type in a name">
-
-        <span class="note">Under what condition?</span>
-        <input type="text" id="conditionInput" onkeyup="conditionSearch(event)"  title="Type in a name">
-
-        <div class="relative">
-          <ul id="condition">
-            <li>Define</li>
-            <li>Identify</li>
-            <li>Evaluate</li>
-            <li>Develop</li>
-            <li>Create</li>
-            <li>Design</li>
-            <li>Experiment</li>
-            <li>Visualise</li>
-          </ul>
-        </div>
-
-        <span class="note">Standards / Criteria ?</span>
-        <input type="text" id="criteriaInput" onkeyup="getCriteria()"  title="Type in a name">
-
-        <a id="when-how-link" href="">Next</a>
+        <input type="text" id="whenInput" onkeyup="searchWhen()"  title="Type in a name">
       </div>
+
+      <ul id="when">
+        <li onclick="getWhen(event)">By the end of this semester</li>
+        <li onclick="getWhen(event)">In 2 weeks</li>
+        <li onclick="getWhen(event)">In 4 weeks</li>
+      </ul>
     </div>
+
+    <!-- how -->
+    <div id="how-wrapper" class="wrapper">
+      <div class="input-wrapper">
+        <span class="note">Which words match your subject the best?</span>
+        <input type="text" id="howInput" onkeyup="searchHow(event)"  title="Type in a name">
+      </div>
+
+      <ul id="how">
+        <li onclick="getHow(event)">Define</li>
+        <li onclick="getHow(event)">Identify</li>
+        <li onclick="getHow(event)">Evaluate</li>
+        <li onclick="getHow(event)">Develop</li>
+        <li onclick="getHow(event)">Create</li>
+        <li onclick="getHow(event)">Design</li>
+        <li onclick="getHow(event)">Experiment</li>
+        <li onclick="getHow(event)">Visualise</li>
+      </ul>
+
+    </div>
+
+    
+    <!-- criteria -->
+    <div id="criteria-wrapper" class="wrapper">
+      <div class="input-wrapper">
+        <span class="note">Criteria?</span>
+        <input type="text" id="criteriaInput" onkeyup="getCriteria()"  title="Type in a name">
+        <a id="criteria-link" href="">Generate</a>
+      </div>
+    </div>  
 
     <div id="result">
       <h2 id="final-text"></h2>

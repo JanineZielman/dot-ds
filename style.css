@@ -36,7 +36,8 @@ body{
   max-width: 600px;
   position: fixed;
   background: #adacac;
-  left: 2.5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 input{
@@ -68,6 +69,10 @@ ul a:hover{
   border-bottom: 2px solid black;
 }
 
+li{
+  cursor: pointer;
+}
+
 .overlay{
   width: 100%;
   position: fixed;
@@ -76,35 +81,28 @@ ul a:hover{
   background: linear-gradient(0deg, rgba(173,172,172,1) 0%, rgba(173,172,172,0) 100%);
 }
 
-.input-wrapper2 a{
-  width: 100%;
-  display: block;
-  text-align: right;
-}
-
-.input-wrapper2 ul{
-  margin-top: 24px;
-  margin-bottom: 24px;
-  padding: 0;
-}
-
 .relative{
   position: relative;
 }
 
-#condition{
-  max-height: 200px;
-  height: 200px;
-  overflow-y: scroll;
-  position: relative;
-  margin-bottom: 0px;
+
+#topbar{
+  position: fixed;
+  top: 10px;
+  z-index: 99;
+  font-size: 16px;
+  text-align: center;
 }
 
-#condition:after{
-  content: "";
-  position: fixed;
-  top: 310px;
+.wrapper{
   width: 100%;
-  height: 100px;
-  background: linear-gradient(0deg, rgba(173,172,172,1) 20%, rgba(173,172,172,0) 100%);
+  text-align: left;
+}
+
+#result{
+  position: fixed;
+  width: 95%;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
