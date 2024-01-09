@@ -50,7 +50,20 @@ function getHow(event) {
   var input, current;
   input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
   current = window.location.search;
-  window.location.href = current + '&how=' + input;
+  event.target.classList.toggle('active');
+  // window.location.href = current + '&how=' + input;
+}
+
+function goNext(){
+  var input, current;
+  current = window.location.search;
+  console.log(document.getElementsByClassName('active'))
+  let active = document.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}-`;
+    
+  }
+  window.location.href = current + '&how=' + input.replaceAll(' ', '-').replaceAll('undefined', '');
 }
 
 function searchHow() {
@@ -98,6 +111,7 @@ window.addEventListener("load", (event) => {
   
   if (subject){
     document.getElementById('subject-wrapper').style.display = 'none';
+    document.getElementById('subject-wrapper').style.opacity = '0';
     document.getElementById('what-wrapper').style.display = 'block';
     document.getElementById('topbar').innerHTML = `${subject}`;
   }
