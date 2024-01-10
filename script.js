@@ -21,29 +21,46 @@ function getInput() {
   val = input.value.toLowerCase().replaceAll(' ', '-');
   current = window.location.search;
   document.getElementById('what-link').href = current + '&what=' + val;
+  activateBalls();
+}
+
+
+function getSubject(event) {
+  var input, current;
+  input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
+  current = window.location.search;
+  event.target.classList.toggle('active');
+  document.getElementById("active-subject").appendChild(event.target);
+}
+
+function subjectNext() {
+  var input, current;
+  current = window.location.search;
+  let active = document.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}`;
+    
+  }
+  window.location.href = current + '?subject=' + input.replaceAll('undefined', '');
 }
 
 function getWhen(event) {
   var input, current;
   input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
   current = window.location.search;
-  window.location.href = current + '&when=' + input;
+  event.target.classList.toggle('active');
+  document.getElementById("active-when").appendChild(event.target);
 }
 
-function searchWhen() {
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("whenInput");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("when");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-      txtValue = li[i].textContent || li[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-      } else {
-          li[i].style.display = "none";
-      }
+function whenNext() {
+  var input, current;
+  current = window.location.search;
+  let active = document.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}`;
+    
   }
+  window.location.href = current + '&when=' + input.replaceAll('undefined', '');
 }
 
 function getHow(event) {
@@ -51,19 +68,18 @@ function getHow(event) {
   input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
   current = window.location.search;
   event.target.classList.toggle('active');
-  // window.location.href = current + '&how=' + input;
+  document.getElementById("active-how").appendChild(event.target);
 }
 
-function goNext(){
+function howNext(){
   var input, current;
   current = window.location.search;
-  console.log(document.getElementsByClassName('active'))
   let active = document.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}-`;
+    input += `${active[i].innerText}, `;
     
   }
-  window.location.href = current + '&how=' + input.replaceAll(' ', '-').replaceAll('undefined', '');
+  window.location.href = current + '&how=' + input.replaceAll('undefined', '');
 }
 
 function searchHow() {
@@ -111,7 +127,7 @@ window.addEventListener("load", (event) => {
   
   if (subject){
     document.getElementById('subject-wrapper').style.display = 'none';
-    document.getElementById('subject-wrapper').style.opacity = '0';
+    // document.getElementById('subject-wrapper').style.opacity = '0';
     document.getElementById('what-wrapper').style.display = 'block';
     document.getElementById('topbar').innerHTML = `${subject}`;
   }
@@ -134,7 +150,7 @@ window.addEventListener("load", (event) => {
     document.getElementById('criteria-wrapper').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
-    document.getElementById('final-text').innerHTML = when.replaceAll('-', ' ') + ' students should ' + ' ' + criteria.replaceAll('-', ' ')  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')
+    document.getElementById('final-text').innerHTML = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' ' + criteria.replaceAll('-', ' ')
   }
 
 

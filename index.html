@@ -16,55 +16,63 @@
 
     <!-- subject -->
     <div id="subject-wrapper" class="wrapper">
-      <div class="input-wrapper">
-        <span class="note">What are you teaching?</span>
-        <input type="text" id="subjectInput" onkeyup="searchSubject()"  title="Type in a name">
+      <div class="canvas">
+        <h2 class="note">What are you teaching?</h2>
+        <div id="active-subject"></div>
+        <div class="line"></div>
+        <div class="next" onclick="subjectNext()">Next</div>
       </div>
 
-      <ul id="subject">
-        <li><a href="?subject=type">Type & Typography</a></li>
-        <li><a href="?subject=research">Design Research</a></li>
-        <li><a href="?subject=interactive">Interactive Media</a></li>
-        <li><a href="?subject=theory">Theory & History</a></li>
-        <li><a href="?subject=openlab">Open Lab</a></li>
-        <li><a href="?subject=visual">Visual Grammar</a></li>
-        <li><a href="?subject=spaces">Spaces & Systems</a></li>
-        <li><a href="?subject=play">Materiality & Play</a></li>
-        <li><a href="?subject=computing">Creativity & Computing</a></li>
-        <li><a href="?subject=sprint">Sprint</a></li>
-        <li><a href="?subject=projectmonth">Project Month</a></li>
-      </ul>
+      <div id="balls" class="balls">
+        <li class="ball" onclick="getSubject(event)">Type & Typography</li>
+        <li class="ball" onclick="getSubject(event)">Design Research</li>
+        <li class="ball" onclick="getSubject(event)">Interactive Media</li>
+        <li class="ball" onclick="getSubject(event)">Theory & History</li>
+        <li class="ball" onclick="getSubject(event)">Open Lab</li>
+        <li class="ball" onclick="getSubject(event)">Visual Grammar</li>
+        <li class="ball" onclick="getSubject(event)">Spaces & Systems</li>
+        <li class="ball" onclick="getSubject(event)">Materiality & Play</li>
+        <li class="ball" onclick="getSubject(event)">Creativity & Computing</li>
+        <li class="ball" onclick="getSubject(event)">Sprint</li>
+        <li class="ball" onclick="getSubject(event)">Project Month</li>
+      </div>
     </div>
 
     <!-- what -->
     <div id="what-wrapper" class="wrapper">
-      <div class="input-wrapper">
-        <span class="note">What are the students making / learning?</span>
+      <div class="canvas">
+        <h2 class="note">What are the students making / learning?</h2>
         <input type="text" id="whatInput" onkeyup="getInput()"  title="Type in a name">
-        <a id="what-link" href="">Next</a>
+        <a class="next" id="what-link" href="">Next</a>
       </div>
     </div>
 
 
     <!-- when -->
     <div id="when-wrapper" class="wrapper">
-      <div class="input-wrapper">
-        <span class="note">When should it be finished?</span>
-        <input type="text" id="whenInput" onkeyup="searchWhen()"  title="Type in a name">
+      <div class="canvas">
+        <h2 class="note">When should it be finished?</h2>
+        <div id="active-when"></div>
+        <div class="line"></div>
+        <div class="next" onclick="whenNext()">Next</div>
       </div>
 
-      <ul id="when">
-        <li onclick="getWhen(event)">By the end of this semester</li>
-        <li onclick="getWhen(event)">In 2 weeks</li>
-        <li onclick="getWhen(event)">In 4 weeks</li>
-      </ul>
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getWhen(event)">End of semester</li>
+        <li class="ball" onclick="getWhen(event)">In 2 weeks</li>
+        <li class="ball" onclick="getWhen(event)">In 4 weeks</li>
+      </div>
     </div>
 
     <!-- how -->
-    <div id="how-wrapper">
+    <div id="how-wrapper" class="wrapper">
 
-        <h2 class="note">Which words match your subject the best?</h2>
-        <div id="how-link" onclick="goNext()">Next</div>
+        <div class="canvas">
+          <h2 class="note">Which words match your subject the best?</h2>
+          <div id="active-how"></div>
+          <div class="line"></div>
+          <div class="next" id="how-link" onclick="howNext()">Next</div>
+        </div>
 
 
       <div class="balls" id="balls">
@@ -109,26 +117,15 @@
 
       </div>
 
-      <!-- <ul id="how">
-        <li onclick="getHow(event)">Define</li>
-        <li onclick="getHow(event)">Identify</li>
-        <li onclick="getHow(event)">Evaluate</li>
-        <li onclick="getHow(event)">Develop</li>
-        <li onclick="getHow(event)">Create</li>
-        <li onclick="getHow(event)">Design</li>
-        <li onclick="getHow(event)">Experiment</li>
-        <li onclick="getHow(event)">Visualise</li>
-      </ul> -->
-
     </div>
 
     
     <!-- criteria -->
     <div id="criteria-wrapper" class="wrapper">
-      <div class="input-wrapper">
-        <span class="note">Criteria?</span>
+      <div class="canvas">
+        <h2 class="note">Criteria?</h2>
         <input type="text" id="criteriaInput" onkeyup="getCriteria()"  title="Type in a name">
-        <a id="criteria-link" href="">Generate</a>
+        <a class="next" id="criteria-link" href="">Generate</a>
       </div>
     </div>  
 

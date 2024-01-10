@@ -1,7 +1,5 @@
-// Bouncing Balls. By Rob Glazebrook
-// The balls are randomized in size, color, opacity, and bounce direction. They'll bounce off the walls of their container and generally make a rather pretty show of things.
-balls = document.getElementById("balls");
-li = balls.getElementsByTagName("li");
+balls = document.body
+li = balls.getElementsByClassName("ball");
 
 
 var ballCount = li.length
@@ -16,6 +14,7 @@ $(function() {
   balls = window.setInterval(moveBalls,25); // 24 FPS
   $(window).resize(function() { moveBallsIntoBounds(); });
 });
+
 
 // Random number generator. Takes a minimum, maximum, and a boolean for whether the random number should be an integer.
 function rand(min,max,isInt) {
@@ -40,8 +39,8 @@ function initBalls() {
       'background-color': 'rgb('+rand(0,255,true)+','+rand(0
                                                            ,255,true)+','+rand(0,                                                                  
                                                                                255,true)+')',
-      'top': rand(-50,container.height()-size),
-      'left': rand(-50,container.width()-size)
+      'top': rand(0,container.height()-size),
+      'left': rand(0,container.width()-size)
     }).attr({
       'data-dX':rand(-1,1),
       'data-dY':rand(1,1)
