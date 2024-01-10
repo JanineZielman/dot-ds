@@ -151,7 +151,7 @@ window.addEventListener("load", (event) => {
     document.getElementById('when-wrapper').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
-    final = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' ' + criteria.replaceAll('-', ' ')
+    final = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' while ' + criteria.replaceAll('-', ' ')
   }
 
 
