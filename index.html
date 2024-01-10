@@ -39,42 +39,15 @@
       </div>
     </div>
 
-    <!-- what -->
-    <div id="what-wrapper" class="wrapper">
-      <div class="canvas">
-        <h2 class="note">What are the students making / learning?</h2>
-        <input type="text" id="whatInput" onkeyup="getInput()"  title="Type in a name">
-        <a class="next" id="what-link" href="">Next</a>
-      </div>
-    </div>
-
-
-    <!-- when -->
-    <div id="when-wrapper" class="wrapper">
-      <div class="canvas">
-        <h2 class="note">When should it be finished?</h2>
-        <div id="active-when"></div>
-        <div class="line"></div>
-        <div class="next" onclick="whenNext()">Next</div>
-      </div>
-
-      <div class="balls" id="balls">
-        <li class="ball" onclick="getWhen(event)">End of semester</li>
-        <li class="ball" onclick="getWhen(event)">In 2 weeks</li>
-        <li class="ball" onclick="getWhen(event)">In 4 weeks</li>
-      </div>
-    </div>
-
     <!-- how -->
     <div id="how-wrapper" class="wrapper">
 
-        <div class="canvas">
-          <h2 class="note">Which words match your subject the best?</h2>
-          <div id="active-how"></div>
-          <div class="line"></div>
-          <div class="next" id="how-link" onclick="howNext()">Next</div>
-        </div>
-
+      <div class="canvas">
+        <h2 class="note">After completion, students will be able to:</h2>
+        <div id="active-how"></div>
+        <div class="line"></div>
+        <div class="next" id="how-link" onclick="howNext()">Next</div>
+      </div>
 
       <div class="balls" id="balls">
         <li class="ball" onclick="getHow(event)">Define</li>
@@ -120,15 +93,40 @@
 
     </div>
 
-    
+    <!-- what -->
+    <div id="what-wrapper" class="wrapper">
+      <div class="canvas">
+        <h2 class="note">These skills are demonstrated by:</h2>
+        <input type="text" id="whatInput" onkeyup="getInput()"  title="Type in a name">
+        <a class="next" id="what-link" href="">Next</a>
+      </div>
+    </div>
+
     <!-- criteria -->
     <div id="criteria-wrapper" class="wrapper">
       <div class="canvas">
-        <h2 class="note">Criteria?</h2>
+        <h2 class="note">The criteria for acceptable performance are:</h2>
         <input type="text" id="criteriaInput" onkeyup="getCriteria()"  title="Type in a name">
         <a class="next" id="criteria-link" href="">Generate</a>
       </div>
     </div>  
+    
+
+    <!-- when -->
+    <div id="when-wrapper" class="wrapper">
+      <div class="canvas">
+        <h2 class="note">When should it be finished?</h2>
+        <div id="active-when"></div>
+        <div class="line"></div>
+        <div class="next" onclick="whenNext()">Next</div>
+      </div>
+
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getWhen(event)">End of semester</li>
+        <li class="ball" onclick="getWhen(event)">In 2 weeks</li>
+        <li class="ball" onclick="getWhen(event)">In 4 weeks</li>
+      </div>
+    </div>
 
     <div id="result">
       <h2 id="final-text"></h2>

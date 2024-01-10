@@ -129,30 +129,32 @@ window.addEventListener("load", (event) => {
   if (subject){
     document.getElementById('subject-wrapper').style.display = 'none';
     // document.getElementById('subject-wrapper').style.opacity = '0';
-    document.getElementById('what-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject}`;
-  }
-  if(what){
-    document.getElementById('what-wrapper').style.display = 'none';
-    document.getElementById('when-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject} • ${what}`;
-  }
-  if(when){
-    document.getElementById('when-wrapper').style.display = 'none';
     document.getElementById('how-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject} • ${what} • ${when}`;
+    document.getElementById('topbar').innerHTML = `${subject}`;
   }
   if(how){
     document.getElementById('how-wrapper').style.display = 'none';
+    document.getElementById('what-wrapper').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${subject} • ${how}`;
+  }
+  if(what){
+    document.getElementById('what-wrapper').style.display = 'none';
     document.getElementById('criteria-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject} • ${what} • ${when} • ${how}`;
+    document.getElementById('topbar').innerHTML = `${subject} • ${how} • ${what}`;
   }
   if(criteria){
     document.getElementById('criteria-wrapper').style.display = 'none';
+    document.getElementById('when-wrapper').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${subject} • ${how} • ${what} • ${criteria}`;
+  }
+  if(when){
+    document.getElementById('when-wrapper').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
     final = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' ' + criteria.replaceAll('-', ' ')
   }
+
+
   if(final){
     document.getElementById('final-text').innerText = final
   }
