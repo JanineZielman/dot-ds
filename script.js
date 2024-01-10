@@ -123,6 +123,7 @@ window.addEventListener("load", (event) => {
   const when = urlParams.get('when')
   const how = urlParams.get('how')
   const criteria = urlParams.get('criteria')
+  let final;
 
   
   if (subject){
@@ -150,7 +151,10 @@ window.addEventListener("load", (event) => {
     document.getElementById('criteria-wrapper').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
-    document.getElementById('final-text').innerHTML = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' ' + criteria.replaceAll('-', ' ')
+    final = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' ' + criteria.replaceAll('-', ' ')
+  }
+  if(final){
+    document.getElementById('final-text').innerText = final
   }
 
 
