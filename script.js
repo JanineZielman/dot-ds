@@ -44,25 +44,6 @@ function subjectNext() {
   window.location.href = current + '?subject=' + input.replaceAll('undefined', '');
 }
 
-function getWhen(event) {
-  var input, current;
-  input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
-  current = window.location.search;
-  event.target.classList.toggle('active');
-  document.getElementById("active-when").appendChild(event.target);
-}
-
-function whenNext() {
-  var input, current;
-  current = window.location.search;
-  let active = document.getElementsByClassName('active');
-  for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}`;
-    
-  }
-  window.location.href = current + '&when=' + input.replaceAll('undefined', '');
-}
-
 function getHow(event) {
   var input, current;
   input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
@@ -111,7 +92,6 @@ function getCriteria() {
 
 window.addEventListener("load", (event) => {
   document.getElementById('what-wrapper').style.display = 'none';
-  document.getElementById('when-wrapper').style.display = 'none';
   document.getElementById('how-wrapper').style.display = 'none';
   document.getElementById('criteria-wrapper').style.display = 'none';
   document.getElementById('result').style.display = 'none';
@@ -120,7 +100,6 @@ window.addEventListener("load", (event) => {
   const urlParams = new URLSearchParams(queryString);
   const subject = urlParams.get('subject')
   const what = urlParams.get('what')
-  const when = urlParams.get('when')
   const how = urlParams.get('how')
   const criteria = urlParams.get('criteria')
   let final;
@@ -144,19 +123,39 @@ window.addEventListener("load", (event) => {
   }
   if(criteria){
     document.getElementById('criteria-wrapper').style.display = 'none';
-    document.getElementById('when-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject} • ${how} • ${what} • ${criteria}`;
-  }
-  if(when){
-    document.getElementById('when-wrapper').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
-    final = when.replaceAll('-', ' ') + ' students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' while ' + criteria.replaceAll('-', ' ')
+    final =  'make a full sentence using these words: students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' while ' + criteria.replaceAll('-', ' ')
   }
 
 
   if(final){
-    document.getElementById('final-text').innerText = final
+
+    const data = JSON.stringify({
+      "max_tokens": 512,
+      "model": "chat-sophos-1",
+      "n": 1,
+      "source_lang": "en",
+      "target_lang": "en",
+      "temperature": 0.65,
+      "text": final
+    });
+    
+    const xhr = new XMLHttpRequest();
+    // xhr.withCredentials = true;
+    
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === this.DONE) {
+        console.log( JSON.parse(this.responseText));
+        document.getElementById('final-text').innerText = 'By the end of the semester, ' + JSON.parse(this.responseText).data.outputs?.[0]?.text.replaceAll('"', '')
+      }
+    });
+    
+    xhr.open("POST", "https://api.textcortex.com/v1/texts/completions");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.setRequestHeader("Authorization", "Bearer gAAAAABloT7yHMSb4yYsU9H8d2lp1zX3tmwwQwlrVoiyCR2r4-aLPzYzm8Crd0aiJAAjHSYT-CS6nvRVZvXDJYjxgFqgGygfyBvNjMi12fBvqeYbtlyNaOOWX_z4CvoTpmK00gvZlNmY");
+    
+    xhr.send(data);
   }
 
 
