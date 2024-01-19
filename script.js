@@ -9,7 +9,7 @@ function step1Next(){
   selected = document.getElementById("active-1");
   let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}, `;
+    input += `${active[i].innerText} `;
     
   }
   window.location.href = current +  '&step1=' + input.replaceAll('undefined', '').replaceAll('...', '');
@@ -26,7 +26,7 @@ function step2Next(){
   selected = document.getElementById("active-2");
   let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}, `;
+    input += `${active[i].innerText} `;
     
   }
   window.location.href = current + '&step2=' + input.replaceAll('undefined', '').replaceAll('...', '');
@@ -43,7 +43,7 @@ function step3Next(){
   selected = document.getElementById("active-3");
   let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}, `;
+    input += `${active[i].innerText} `;
     
   }
   window.location.href = current + '&step3=' + input.replaceAll('undefined', '').replaceAll('...', '');
@@ -60,7 +60,7 @@ function step4Next(){
   selected = document.getElementById("active-4");
   let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}, `;
+    input += `${active[i].innerText} `;
     
   }
   window.location.href = current + '&step4=' + input.replaceAll('undefined', '').replaceAll('...', '');
@@ -77,7 +77,7 @@ function step5Next(){
   selected = document.getElementById("active-5");
   let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}, `;
+    input += `${active[i].innerText} `;
     
   }
   window.location.href = current + '&step5=' + input.replaceAll('undefined', '').replaceAll('...', '');
@@ -94,7 +94,7 @@ function step6Next(){
   selected = document.getElementById("active-6");
   let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}, `;
+    input += `${active[i].innerText} `;
     
   }
   window.location.href = current + '&step6=' + input.replaceAll('undefined', '').replaceAll('...', '');
@@ -152,6 +152,7 @@ window.addEventListener("load", (event) => {
     document.getElementById('step4').style.display = 'none';
     document.getElementById('step5').style.display = 'block';
     document.getElementById('topbar').innerHTML = `${step1} • ${step2} • ${step3} • ${step4}`;
+    document.getElementById('insert3').innerText = step3;
   }
 
   if(step5){
