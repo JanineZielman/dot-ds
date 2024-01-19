@@ -1,131 +1,171 @@
-function searchSubject() {
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById("subjectInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("subject");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-        }
-    }
-}
-
-function getInput() {
-  var input, val, current;
-  input = document.getElementById("whatInput");
-  val = input.value.toLowerCase().replaceAll(' ', '-');
-  current = window.location.search;
-  document.getElementById('what-link').href = current + '&what=' + val;
-  activateBalls();
-}
-
-
-function getSubject(event) {
-  var input, current;
-  input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
-  current = window.location.search;
+function getStep1(event) {
   event.target.classList.toggle('active');
-  document.getElementById("active-subject").appendChild(event.target);
+  document.getElementById("active-1").appendChild(event.target);
 }
 
-function subjectNext() {
-  var input, current;
+function step1Next(){
+  var input, current, selected;
   current = window.location.search;
-  let active = document.getElementsByClassName('active');
-  for (i = 0; i < active.length; i++) {
-    input += `${active[i].innerText}`;
-    
-  }
-  window.location.href = current + '?subject=' + input.replaceAll('undefined', '');
-}
-
-function getHow(event) {
-  var input, current;
-  input = event.target.innerText.replaceAll(' ', '-').toLowerCase();
-  current = window.location.search;
-  event.target.classList.toggle('active');
-  document.getElementById("active-how").appendChild(event.target);
-}
-
-function howNext(){
-  var input, current;
-  current = window.location.search;
-  let active = document.getElementsByClassName('active');
+  selected = document.getElementById("active-1");
+  let active = selected.getElementsByClassName('active');
   for (i = 0; i < active.length; i++) {
     input += `${active[i].innerText}, `;
     
   }
-  window.location.href = current + '&how=' + input.replaceAll('undefined', '');
+  window.location.href = current +  '&step1=' + input.replaceAll('undefined', '').replaceAll('...', '');
 }
 
-function searchHow() {
-  var input, filter, ul, li, a, i, txtValue;
-  input = document.getElementById("howInput");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("how");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-      txtValue = li[i].textContent || li[i].innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-      } else {
-          li[i].style.display = "none";
-      }
-  }
+function getStep2(event) {
+  event.target.classList.toggle('active');
+  document.getElementById("active-2").appendChild(event.target);
 }
 
-function getCriteria() {
-  var input, val, current;
-  input = document.getElementById("criteriaInput");
-  val = input.value.toLowerCase().replaceAll(' ', '-');
+function step2Next(){
+  var input, current;
   current = window.location.search;
-  document.getElementById('criteria-link').href = current + '&criteria=' + val;
+  selected = document.getElementById("active-2");
+  let active = selected.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}, `;
+    
+  }
+  window.location.href = current + '&step2=' + input.replaceAll('undefined', '').replaceAll('...', '');
+}
+
+function getStep3(event) {
+  event.target.classList.toggle('active');
+  document.getElementById("active-3").appendChild(event.target);
+}
+
+function step3Next(){
+  var input, current;
+  current = window.location.search;
+  selected = document.getElementById("active-3");
+  let active = selected.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}, `;
+    
+  }
+  window.location.href = current + '&step3=' + input.replaceAll('undefined', '').replaceAll('...', '');
+}
+
+function getStep4(event) {
+  event.target.classList.toggle('active');
+  document.getElementById("active-4").appendChild(event.target);
+}
+
+function step4Next(){
+  var input, current;
+  current = window.location.search;
+  selected = document.getElementById("active-4");
+  let active = selected.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}, `;
+    
+  }
+  window.location.href = current + '&step4=' + input.replaceAll('undefined', '').replaceAll('...', '');
+}
+
+function getStep5(event) {
+  event.target.classList.toggle('active');
+  document.getElementById("active-5").appendChild(event.target);
+}
+
+function step5Next(){
+  var input, current;
+  current = window.location.search;
+  selected = document.getElementById("active-5");
+  let active = selected.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}, `;
+    
+  }
+  window.location.href = current + '&step5=' + input.replaceAll('undefined', '').replaceAll('...', '');
+}
+
+function getStep6(event) {
+  event.target.classList.toggle('active');
+  document.getElementById("active-6").appendChild(event.target);
+}
+
+function step6Next(){
+  var input, current;
+  current = window.location.search;
+  selected = document.getElementById("active-6");
+  let active = selected.getElementsByClassName('active');
+  for (i = 0; i < active.length; i++) {
+    input += `${active[i].innerText}, `;
+    
+  }
+  window.location.href = current + '&step6=' + input.replaceAll('undefined', '').replaceAll('...', '');
 }
 
 
 
 
 window.addEventListener("load", (event) => {
-  document.getElementById('what-wrapper').style.display = 'none';
-  document.getElementById('how-wrapper').style.display = 'none';
-  document.getElementById('criteria-wrapper').style.display = 'none';
+  document.getElementById('step1').style.visibility = 'hidden';
+  document.getElementById('step2').style.display = 'none';
+  document.getElementById('step3').style.display = 'none';
+  document.getElementById('step4').style.display = 'none';
+  document.getElementById('step5').style.display = 'none';
+  document.getElementById('step6').style.display = 'none';
+
   document.getElementById('result').style.display = 'none';
 
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const subject = urlParams.get('subject')
-  const what = urlParams.get('what')
-  const how = urlParams.get('how')
-  const criteria = urlParams.get('criteria')
+  const start = urlParams.get('start')
+  const step1 = urlParams.get('step1')
+  const step2 = urlParams.get('step2')
+  const step3 = urlParams.get('step3')
+  const step4 = urlParams.get('step4')
+  const step5 = urlParams.get('step5')
+  const step6 = urlParams.get('step6')
+
   let final;
 
+  if(start){
+    document.getElementById('landing-page').style.display = 'none';
+    document.getElementById('step1').style.visibility = 'visible';
+  }
   
-  if (subject){
-    document.getElementById('subject-wrapper').style.display = 'none';
-    // document.getElementById('subject-wrapper').style.opacity = '0';
-    document.getElementById('how-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject}`;
+  if(step1){
+    document.getElementById('step1').style.display = 'none';
+    document.getElementById('step2').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${step1}`;
   }
-  if(how){
-    document.getElementById('how-wrapper').style.display = 'none';
-    document.getElementById('what-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject} • ${how}`;
+
+  if(step2){
+    document.getElementById('step2').style.display = 'none';
+    document.getElementById('step3').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${step1} • ${step2}`;
   }
-  if(what){
-    document.getElementById('what-wrapper').style.display = 'none';
-    document.getElementById('criteria-wrapper').style.display = 'block';
-    document.getElementById('topbar').innerHTML = `${subject} • ${how} • ${what}`;
+
+  if(step3){
+    document.getElementById('step3').style.display = 'none';
+    document.getElementById('step4').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${step1} • ${step2} • ${step3}`;
   }
-  if(criteria){
-    document.getElementById('criteria-wrapper').style.display = 'none';
+
+  if(step4){
+    document.getElementById('step4').style.display = 'none';
+    document.getElementById('step5').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${step1} • ${step2} • ${step3} • ${step4}`;
+  }
+
+  if(step5){
+    document.getElementById('step5').style.display = 'none';
+    document.getElementById('step6').style.display = 'block';
+    document.getElementById('topbar').innerHTML = `${step1} • ${step2} • ${step3} • ${step4} • ${step5}`;
+  }
+
+  if(step6){
+    document.getElementById('step6').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
-    final =  'make a full sentence using these words: students should ' + ' '  + ' ' + how.replaceAll('-', ' ')  + ' ' + what.replaceAll('-', ' ')  + ' while ' + criteria.replaceAll('-', ' ')
+    final = `create a sentence using these exact words: "At the end of this assignment, students will ${step1} a(n) ${step2}, demonstrating ${step6} ${step3} of ${step4} using ${step5}."`
+    // document.getElementById('final-text').innerText = final
   }
 
 
@@ -147,7 +187,7 @@ window.addEventListener("load", (event) => {
     xhr.addEventListener("readystatechange", function () {
       if (this.readyState === this.DONE) {
         console.log( JSON.parse(this.responseText));
-        document.getElementById('final-text').innerText = 'By the end of the semester, ' + JSON.parse(this.responseText).data.outputs?.[0]?.text.replaceAll('"', '')
+        document.getElementById('final-text').innerText = JSON.parse(this.responseText).data.outputs?.[0]?.text
       }
     });
     

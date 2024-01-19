@@ -11,105 +11,175 @@
 <body>
   <div class="container">
 
-    <div id="topbar">
+    <div id="topbar"></div>
 
-    </div>
-
-    <!-- subject -->
-    <div id="subject-wrapper" class="wrapper">
+    <!-- landing page -->
+    <div id="landing-page" class="wrapper">
       <div class="canvas">
-        <h2 class="note">What are you teaching?</h2>
-        <div id="active-subject"></div>
+        <h2 class="note">Compose your learning goal</h2>
         <div class="line"></div>
-        <div class="next" onclick="subjectNext()">Next</div>
-      </div>
-
-      <div id="balls" class="balls">
-        <li class="ball" onclick="getSubject(event)">Type & Typography</li>
-        <li class="ball" onclick="getSubject(event)">Design Research</li>
-        <li class="ball" onclick="getSubject(event)">Interactive Media</li>
-        <li class="ball" onclick="getSubject(event)">Theory & History</li>
-        <li class="ball" onclick="getSubject(event)">Open Lab</li>
-        <li class="ball" onclick="getSubject(event)">Visual Grammar</li>
-        <li class="ball" onclick="getSubject(event)">Spaces & Systems</li>
-        <li class="ball" onclick="getSubject(event)">Materiality & Play</li>
-        <li class="ball" onclick="getSubject(event)">Creativity & Computing</li>
-        <li class="ball" onclick="getSubject(event)">Sprint</li>
-        <li class="ball" onclick="getSubject(event)">Project Month</li>
+        <a class="next" id="how-link" href="?start=true">Start</a>
       </div>
     </div>
 
-    <!-- how -->
-    <div id="how-wrapper" class="wrapper">
+    <!-- Step 1 -->
+    <div id="step1" class="wrapper">
 
       <div class="canvas">
-        <h2 class="note">After completion, students will be able to:</h2>
-        <div id="active-how"></div>
+        <h2 class="note">At the end of this assignment, students will</h2>
+        <div id="active-1">
+          <span class="ball active" id="step1Input" role="textbox" contenteditable>...</span>
+        </div>
         <div class="line"></div>
-        <div class="next" id="how-link" onclick="howNext()">Next</div>
+        <div class="next" id="link1" onclick="step1Next()">Next</div>
       </div>
 
       <div class="balls" id="balls">
-        <li class="ball" onclick="getHow(event)">Define</li>
-        <li class="ball" onclick="getHow(event)">Identify</li>
-        <li class="ball" onclick="getHow(event)">Evaluate</li>
-        <li class="ball" onclick="getHow(event)">Develop</li>
-        <li class="ball" onclick="getHow(event)">Create</li>
-        <li class="ball" onclick="getHow(event)">Design</li>
-        <li class="ball" onclick="getHow(event)">Experiment</li>
-        <li class="ball" onclick="getHow(event)">Visualise</li>
-
-        <li class="ball" onclick="getHow(event)">Organize</li>
-        <li class="ball" onclick="getHow(event)">Manage</li>
-        <li class="ball" onclick="getHow(event)">Plan</li>
-        <li class="ball" onclick="getHow(event)">Facilitate</li>
-        <li class="ball" onclick="getHow(event)">Sort</li>
-        <li class="ball" onclick="getHow(event)">Investigate</li>
-        <li class="ball" onclick="getHow(event)">Explore</li>
-        <li class="ball" onclick="getHow(event)">Reflect</li>
-
-        <li class="ball" onclick="getHow(event)">contextualise</li>
-        <li class="ball" onclick="getHow(event)">consider</li>
-        <li class="ball" onclick="getHow(event)">relate</li>
-        <li class="ball" onclick="getHow(event)">communicate</li>
-        <li class="ball" onclick="getHow(event)">explain</li>
-        <li class="ball" onclick="getHow(event)">articulate</li>
-        <li class="ball" onclick="getHow(event)">demonstrate</li>
-        <li class="ball" onclick="getHow(event)">analyse</li>
-
-        <li class="ball" onclick="getHow(event)">compare</li>
-        <li class="ball" onclick="getHow(event)">interpret</li>
-        <li class="ball" onclick="getHow(event)">transform</li>
-        <li class="ball" onclick="getHow(event)">display</li>
-        <li class="ball" onclick="getHow(event)">identify</li>
-        <li class="ball" onclick="getHow(event)">debate</li>
-        <li class="ball" onclick="getHow(event)">engage</li>
-        <li class="ball" onclick="getHow(event)">collaborate</li>
-        <li class="ball" onclick="getHow(event)">interact</li>
-        <li class="ball" onclick="getHow(event)">convince</li>
-
-
+        <li class="ball" onclick="getStep1(event)">show</li>
+        <li class="ball" onclick="getStep1(event)">present</li>
+        <li class="ball" onclick="getStep1(event)">hand in</li>
+        <li class="ball" onclick="getStep1(event)">deliver</li>
       </div>
 
     </div>
 
-    <!-- what -->
-    <div id="what-wrapper" class="wrapper">
+    <!-- Step 2 -->
+    <div id="step2" class="wrapper">
+
       <div class="canvas">
-        <h2 class="note">These skills are demonstrated by:</h2>
-        <input type="text" id="whatInput" onkeyup="getInput()"  title="Type in a name">
-        <a class="next" id="what-link" href="">Next</a>
+        <h2 class="note">What?</h2>
+        <div id="active-2">
+          <span class="ball active" id="step2Input" role="textbox" contenteditable>...</span>
+        </div>
+        <div class="line"></div>
+        <div class="next" id="link2" onclick="step2Next()">Next</div>
       </div>
+
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getStep2(event)">website</li>
+        <li class="ball" onclick="getStep2(event)">web-app</li>
+        <li class="ball" onclick="getStep2(event)">code</li>
+        <li class="ball" onclick="getStep2(event)">document</li>
+        <li class="ball" onclick="getStep2(event)">prototype</li>
+        <li class="ball" onclick="getStep2(event)">experiment</li>
+        <li class="ball" onclick="getStep2(event)">presentation</li>
+        <li class="ball" onclick="getStep2(event)">audio fragment</li>
+        <li class="ball" onclick="getStep2(event)">book</li>
+        <li class="ball" onclick="getStep2(event)">image</li>
+        <li class="ball" onclick="getStep2(event)">research</li>
+        <li class="ball" onclick="getStep2(event)">documentation</li>
+        <li class="ball" onclick="getStep2(event)">project</li>
+        <li class="ball" onclick="getStep2(event)">visualization</li>
+        <li class="ball" onclick="getStep2(event)">process</li>
+        <li class="ball" onclick="getStep2(event)">interaction</li>
+        <li class="ball" onclick="getStep2(event)">dissemination</li>
+        <li class="ball" onclick="getStep2(event)">animation</li>
+        <li class="ball" onclick="getStep2(event)">film</li>
+        <li class="ball" onclick="getStep2(event)">model</li>
+        <li class="ball" onclick="getStep2(event)">essay</li>
+      </div>
+
     </div>
 
-    <!-- criteria -->
-    <div id="criteria-wrapper" class="wrapper">
+    <!-- Step 3 -->
+    <div id="step3" class="wrapper">
+
       <div class="canvas">
-        <h2 class="note">The criteria for acceptable performance are:</h2>
-        <input type="text" id="criteriaInput" onkeyup="getCriteria()"  title="Type in a name">
-        <a class="next" id="criteria-link" href="">Generate</a>
+        <h2 class="note">... demonstrating</h2>
+        <div id="active-3">
+          <span class="ball active" id="step3Input" role="textbox" contenteditable>...</span>
+        </div>
+        <div class="line"></div>
+        <div class="next" id="link3" onclick="step3Next()">Next</div>
       </div>
-    </div>  
+
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getStep3(event)">knowledge</li>
+        <li class="ball" onclick="getStep3(event)">understanding</li>
+        <li class="ball" onclick="getStep3(event)">use</li>
+      </div>
+
+    </div>
+
+    <!-- Step 4 -->
+    <div id="step4" class="wrapper">
+
+      <div class="canvas">
+        <h2 class="note">... of one (or more) of these skills</h2>
+        <div id="active-4">
+          <span class="ball active" id="step4Input" role="textbox" contenteditable>...</span>
+        </div>
+        <div class="line"></div>
+        <div class="next" id="link4" onclick="step4Next()">Next</div>
+      </div>
+
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getStep4(event)">code</li>
+        <li class="ball" onclick="getStep4(event)">write</li>
+        <li class="ball" onclick="getStep4(event)">animate</li>
+        <li class="ball" onclick="getStep4(event)">prototype</li>
+        <li class="ball" onclick="getStep4(event)">research</li>
+        <li class="ball" onclick="getStep4(event)">analyse</li>
+        <li class="ball" onclick="getStep4(event)">typeset</li>
+        <li class="ball" onclick="getStep4(event)">reflect</li>
+        <li class="ball" onclick="getStep4(event)">develop</li>
+        <li class="ball" onclick="getStep4(event)">plan</li>
+        <li class="ball" onclick="getStep4(event)">interact</li>
+        <li class="ball" onclick="getStep4(event)">interpret</li>
+        <li class="ball" onclick="getStep4(event)">plan</li>
+        <li class="ball" onclick="getStep4(event)">explore</li>
+      </div>
+    </div>    
+
+    <!-- Step 5 -->
+    <div id="step5" class="wrapper">
+
+      <div class="canvas">
+        <h2 class="note">... using these tools, situations or formats</h2>
+        <div id="active-5">
+          <span class="ball active" id="step5Input" role="textbox" contenteditable>...</span>
+        </div>
+        <div class="line"></div>
+        <div class="next" id="link5" onclick="step5Next()">Next</div>
+      </div>
+
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getStep5(event)">text</li>
+        <li class="ball" onclick="getStep5(event)">information</li>
+        <li class="ball" onclick="getStep5(event)">content</li>
+        <li class="ball" onclick="getStep5(event)">type</li>
+        <li class="ball" onclick="getStep5(event)">layout</li>
+        <li class="ball" onclick="getStep5(event)">html</li>
+        <li class="ball" onclick="getStep5(event)">css</li>
+        <li class="ball" onclick="getStep5(event)">php</li>
+        <li class="ball" onclick="getStep5(event)">illustrator</li>
+        <li class="ball" onclick="getStep5(event)">photoshop</li>
+        <li class="ball" onclick="getStep5(event)">indesign</li>
+        <li class="ball" onclick="getStep5(event)">cinema4d</li>
+        <li class="ball" onclick="getStep5(event)">blender</li>
+      </div>
+    </div> 
+
+    <!-- Step 6 -->
+    <div id="step6" class="wrapper">
+
+      <div class="canvas">
+        <h2 class="note">Define a base level for acceptable performance of this</h2>
+        <div id="active-6">
+          <span class="ball active" id="step6Input" role="textbox" contenteditable>...</span>
+        </div>
+        <div class="line"></div>
+        <div class="next" id="link6" onclick="step6Next()">Next</div>
+      </div>
+
+      <div class="balls" id="balls">
+        <li class="ball" onclick="getStep6(event)">extensive</li>
+        <li class="ball" onclick="getStep6(event)">significant</li>
+        <li class="ball" onclick="getStep6(event)">confident</li>
+        <li class="ball" onclick="getStep6(event)">sound</li>
+        <li class="ball" onclick="getStep6(event)">adequate</li>
+      </div>
+    </div> 
 
     <div id="result">
       <h2 id="final-text"></h2>
