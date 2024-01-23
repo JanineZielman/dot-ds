@@ -165,7 +165,7 @@ window.addEventListener("load", (event) => {
     document.getElementById('step6').style.display = 'none';
     document.getElementById('result').style.display = 'block';
     document.getElementById('topbar').style.display = 'none';
-    final = `create a sentence using these exact words: "At the end of this assignment, students will ${step1} a(n) ${step2}, demonstrating ${step6} ${step3} of ${step4} using ${step5}."`
+    final = `create a sentence using these exact words: "At the end of this assignment, students will ${step1} a(n) ${step2}, demonstrating ${step6} in the ${step3} of ${step4}ing through ${step5}."`
     // document.getElementById('final-text').innerText = final
   }
 
